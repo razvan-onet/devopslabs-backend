@@ -37,7 +37,7 @@ jobs:
             docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
             docker run -d \
             -p 4000:4000 \
-            --network devopslabs
+            --network devopslabs \
             --name devops-labs-backend \
             --env ConnectionStrings__MySQL="Server=${{ secrets.DB_HOST }};Port=3306;User=${{ secrets.DB_USERNAME }};Password=${{ secrets.DB_PASSWORD }};Database=devops-labs" \
-            ${{ secrets.DOCKER_USERNAME }}/devops-labs-backend:${{ github.run_number }}
+            ${{ secrets.DOCKER_USERNAME }}/devops-labs-backend:3
