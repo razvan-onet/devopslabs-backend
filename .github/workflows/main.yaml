@@ -35,7 +35,6 @@ jobs:
           port: 22
           script: |
             docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-            docker container rm -f devops-labs-backend
             docker run -d \
             -p 4000:4000 \
             --network devopslabs
