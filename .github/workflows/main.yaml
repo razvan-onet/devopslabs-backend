@@ -23,7 +23,7 @@ jobs:
           docker push ${{ secrets.DOCKER_USERNAME }}/devops-labs-backend:${{ github.run_number }}
 
   deploy:
-    run-on: ubuntu-22.04
+    runs-on: ubuntu-22.04
     needs: [build]
     steps:
       - name: Start the docker container
